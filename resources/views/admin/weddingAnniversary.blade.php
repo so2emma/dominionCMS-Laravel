@@ -23,7 +23,7 @@
                                     <option value="-12-">December</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-primary">Find Birthday</button>
+                            <button type="submit" class="btn btn-primary">Find Wedding Anniversary</button>
                         </form>
                     </div>
 
@@ -39,7 +39,6 @@
                 <th scope="col">Firstname</th>
                 <th scope="col">Lastname</th>
                 <th scope="col">Phone No.</th>
-                <th scope="col">Email</th>
                 <th scope="col">Department</th>
                 <th scope="col">Wedding Anniversary</th>
               </tr>
@@ -55,7 +54,6 @@
                   <td>{{ $member->firstname }}</td>
                   <td>{{ $member->lastname }}</td>
                   <td>{{ $member->phone}}</td>
-                  <td>{{ $member->email}}</td>
                   <td>{{ $member->department}}</td>
                   <td>{{ $member->weddingAnniversary}}</td>
               </tr>

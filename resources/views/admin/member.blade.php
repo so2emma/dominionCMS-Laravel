@@ -12,8 +12,12 @@
                             <button type="submit" class="btn btn-primary">Search</button>
                         </form>
                     </div>
-
                 </div>
+                @if (session()->has('session'))
+                    <div class="alert alert-success mt-2">
+                        {{ session('session') }}
+                    </div>
+                @endif
             </div>
         </section>
 
@@ -25,9 +29,6 @@
                 <th scope="col">Firstname</th>
                 <th scope="col">Lastname</th>
                 <th scope="col">Phone No.</th>
-                <th scope="col">Email</th>
-                <th scope="col">Address</th>
-                <th scope="col">DOB</th>
               </tr>
             </thead>
             <tbody>
@@ -43,11 +44,6 @@
                           <td>{{ $member->firstname }}</td>
                           <td>{{ $member->lastname }}</td>
                           <td>{{ $member->phone}}</td>
-                          <td>{{ $member->email}}</td>
-                          <td>{{ $member->address}}</td>
-                          <td>{{ $member->dob}}</td>
-
-
                       </tr>
               @endforeach
               @else

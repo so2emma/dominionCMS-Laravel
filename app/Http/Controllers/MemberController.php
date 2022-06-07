@@ -59,7 +59,8 @@ class MemberController extends Controller
         ]);
 
         Member::create($validate);
-        return back();
+        return back()->with('session','Details have been inserted successfully');
+
     }
 
     /**
@@ -79,9 +80,10 @@ class MemberController extends Controller
      * @param  \App\Models\Member  $member
      * @return \Illuminate\Http\Response
      */
-    public function edit(Member $member)
+    public function edit($id)
     {
-        //
+        $member = Member::findOrFail($id);
+        return view('admin.edit', compact('member'));
     }
 
     /**
@@ -93,7 +95,30 @@ class MemberController extends Controller
      */
     public function update(Request $request, Member $member)
     {
-        //
+        $validate = $request->validate([
+            'firstname' => 'required|min:3',
+            'lastname' => 'required|min:3',
+            'dob' => 'required|date',
+            'address' => 'required|min:10',
+            'phone' => 'required|digits:11',
+            'email' => 'email',
+            'gender' => 'required',
+            'maritalStatus' => 'required',
+            'weddingAnniversary' => 'nullable|date',
+            'bornAgain' => 'required',
+            'salvationDate' => 'nullable|date',
+            'previousChurch' => 'nullable|min:3',
+            'membershipClass' => 'required',
+            'membershipCompletion' => 'nullable|date',
+            'workerStatus' => 'required',
+            'department' => 'nullable',
+            'houseFellowshipStatus' => 'required',
+            'fellowshipLocation' => 'nullable|min:3',
+            'dateJoined' => 'nullable|date'
+        ]);
+
+        $member->update($validate);
+        return back()->with('session','Member details updated successfully');
     }
 
     /**
@@ -104,6 +129,7 @@ class MemberController extends Controller
      */
     public function destroy(Member $member)
     {
-        //
+        $member->delete();
+        return redirect('/admin/members')->with('session','Member deleted successfully');
     }
 }

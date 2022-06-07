@@ -14,7 +14,7 @@
                                 <input name="end" class="form-control" type="date" placeholder="END ......">
 
                             </div>
-                            <button type="submit" class="btn btn-primary">Find Birthday</button>
+                            <button type="submit" class="btn btn-primary">Search</button>
                         </form>
                     </div>
 
@@ -30,9 +30,8 @@
                 <th scope="col">Firstname</th>
                 <th scope="col">Lastname</th>
                 <th scope="col">Phone No.</th>
-                <th scope="col">Email</th>
                 <th scope="col">Department</th>
-                <th scope="col">DOB</th>
+                <th scope="col">When Registered</th>
               </tr>
             </thead>
             <tbody>
@@ -46,14 +45,13 @@
                   <td>{{ $member->firstname }}</td>
                   <td>{{ $member->lastname }}</td>
                   <td>{{ $member->phone}}</td>
-                  <td>{{ $member->email}}</td>
                   <td>{{ $member->department}}</td>
-                  <td>{{ $member->dob}}</td>
+                  <td>{{ $member->created_at}}</td>
               </tr>
               @endforeach
               @else
-              <div class="alert alert-danger">
-                  <p>Select a range of dates </p>
+              <div class="alert alert-success">
+                  <p>Select a Range of Dates </p>
               </div>
               @endunless
             </tbody>

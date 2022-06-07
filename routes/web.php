@@ -20,13 +20,18 @@ Route::get('/', function () {
     return view('membership_form');
 });
 
-Auth::routes();
+// Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // MEMBERSHIP FORM
 Route::get('/membershipForm', [MemberController::class, 'create']);
 Route::post('/storemembershipForm', [MemberController::class, 'store']);
+Route::get('/membershipForm/{id}', [MemberController::class, 'edit']);
+Route::put('/membershipForm/{member}', [MemberController::class, 'update']);
+Route::delete('/membershipForm/{member}', [MemberController::class, 'destroy']);
+
 
 //ADMIN PAGES========================================>>>
 Route::get('/admin/members', [HomeController::class, 'members']);

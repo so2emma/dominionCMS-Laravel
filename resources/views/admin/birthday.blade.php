@@ -39,7 +39,6 @@
                 <th scope="col">Firstname</th>
                 <th scope="col">Lastname</th>
                 <th scope="col">Phone No.</th>
-                <th scope="col">Email</th>
                 <th scope="col">Department</th>
                 <th scope="col">DOB</th>
               </tr>
@@ -55,7 +54,6 @@
                   <td>{{ $member->firstname }}</td>
                   <td>{{ $member->lastname }}</td>
                   <td>{{ $member->phone}}</td>
-                  <td>{{ $member->email}}</td>
                   <td>{{ $member->department}}</td>
                   <td>{{ $member->dob}}</td>
               </tr>
