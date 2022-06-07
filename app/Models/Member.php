@@ -27,7 +27,8 @@ class Member extends Model
         'department',
         'houseFellowshipStatus',
         'fellowshipLocation',
-        'dateJoined'
+        'dateJoined',
+        'IndividualStatus'
     ];
 
     public function scopeFilter($query, array $filters) {

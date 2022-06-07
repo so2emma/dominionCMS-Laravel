@@ -23,6 +23,7 @@
                         <p>Department: <span class="fw-bold">{{ $profile->department }}</span></p>
                         <p>Name of House Fellowship: <span class="fw-bold">{{ $profile->fellowshipLocation }}</span></p>
                         <p>Date Joined: <span class="fw-bold">{{ $profile->dateJoined }}</span></p>
+                        <p>Individual Status: <span class="fw-bold">{{ $profile->IndividualStatus }}</span></p>
 
                         <a class="btn btn-primary" href="/membershipForm/{{ $profile->id }}">Edit Details</a>
                     </div>

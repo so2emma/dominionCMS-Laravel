@@ -31,6 +31,19 @@
                 <form class="row g-3  m-auto p-3" action="/membershipForm/{{ $member->id }}" method="post">
                     @csrf
                     @method("PUT")
+
+                    <div class="col-12">
+                        <label for="IndividualStatus" class="form-group">Individual Status</label>
+                        <select class="form-select"  name="IndividualStatus" aria-label="Default select example">
+                            <option {{ $member->IndividualStatus == "Visitor" ? 'selected':'' }}  value="Visitor">Visitor </option>
+                            <option {{ $member->IndividualStatus == "Member" ? 'selected':'' }} value="Member">Member</option>
+                        </select>
+
+                        @error('IndividualStatus')
+                            <div class="alert mt-2 alert-danger">{{ $message }}</div>
+                        @enderror
+                    </div>
+
                     <div class="col-md-6">
                         <label for="firstname" class="form-label">First Name</label>
                         <input type="text" value="{{ old('firstname', $member->firstname) }}" class="form-control" name="firstname"
@@ -103,10 +116,9 @@
 
                     <div class="col-12">
                         <label for="maritalStatus" class="form-group">Marital Status</label>
-                        <select class="form-select" value="{{ old('email') }}" name="maritalStatus" aria-label="Default select example">
-                            <option selected value="">None</option>
-                            <option selected value="single">Single</option>
-                            <option value="maried">Married</option>
+                        <select class="form-select"  name="maritalStatus" aria-label="Default select example">
+                            <option {{ $member->maritalStatus == "single" ? 'selected':'' }}  value="single">Single</option>
+                            <option {{ $member->maritalStatus == "married" ? 'selected':'' }} value="married">Married</option>
                         </select>
 
                         @error('maritalStatus')

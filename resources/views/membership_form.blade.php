@@ -89,8 +89,7 @@
 
                     <div class="col-12">
                         <label for="gender" class="form-group">Gender</label> <br>
-                        {{-- <input type="radio" name="gender" value="Male" /> Male
-                        <input type="radio" name="gender" value="Female" /> Female --}}
+
 
                         <input type="radio" name="gender" value="Male" class="radio" id="male"
                             <?php if (old('gender') == 'Male') {
@@ -108,11 +107,10 @@
 
                     <div class="col-12">
                         <label for="maritalStatus" class="form-group">Marital Status</label>
-                        <select class="form-select" value="{{ old('email') }}" name="maritalStatus"
+                        <select class="form-select"  name="maritalStatus"
                             aria-label="Default select example">
-                            <option selected value="">None</option>
-                            <option selected value="single">Single</option>
-                            <option value="maried">Married</option>
+                            <option {{ old('maritaStatus') == "single" ? 'selected':'' }} value="single">Single</option>
+                            <option {{ old('maritaStatus') == "married" ? 'selected':'' }} value="married">Married</option>
                         </select>
 
                         @error('maritalStatus')
@@ -141,8 +139,7 @@
                                 echo 'checked="checked"';
                             } ?>>No
 
-                        {{-- <input type="radio" name="bornAgain" value="Born Again" /> Yes
-                        <input type="radio" name="bornAgain" value="Not Born Again" /> No --}}
+
 
                         @error('bornAgain')
                             <div class="alert mt-2 alert-danger">{{ $message }}</div>
@@ -182,8 +179,7 @@
                                 echo 'checked="checked"';
                             } ?>>No
 
-                        {{-- <input type="radio" name="membershipClass" value="completed" /> Yes
-                        <input type="radio" name="membershipClass" value="Yet to complete" /> No --}}
+
 
                         @error('membershipClass')
                             <div class="alert mt-2 alert-danger">{{ $message }}</div>
@@ -211,8 +207,7 @@
                             <?php if (old('workerStatus') == 'Not a worker') {
                                 echo 'checked="checked"';
                             } ?>>No
-                        {{-- <input type="radio" name="workerStatus" value="Worker" /> Yes
-                        <input type="radio" name="workerStatus" value="Not a worker" /> No --}}
+
 
                         @error('workerStatus')
                             <div class="alert mt-2 alert-danger">{{ $message }}</div>
@@ -256,8 +251,7 @@
                             <?php if (old('houseFellowshipStatus') == 'No fellowship') {
                                 echo 'checked="checked"';
                             } ?>>No
-                        {{-- <input type="radio" name="houseFellowshipStatus" value="house fellowshipper" /> Yes
-                        <input type="radio" name="houseFellowshipStatus" value="No fellowship" /> No --}}
+
 
                         @error('houseFellowshipStatus')
                             <div class="alert mt-2 alert-danger">{{ $message }}</div>

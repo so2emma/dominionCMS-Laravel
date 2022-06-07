@@ -114,7 +114,8 @@ class MemberController extends Controller
             'department' => 'nullable',
             'houseFellowshipStatus' => 'required',
             'fellowshipLocation' => 'nullable|min:3',
-            'dateJoined' => 'nullable|date'
+            'dateJoined' => 'nullable|date',
+            'IndividualStatus' => 'required'
         ]);
 
         $member->update($validate);

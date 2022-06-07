@@ -29,6 +29,8 @@
                 <th scope="col">Firstname</th>
                 <th scope="col">Lastname</th>
                 <th scope="col">Phone No.</th>
+                <th scope="col">Status</th>
+
               </tr>
             </thead>
             <tbody>
@@ -44,6 +46,7 @@
                           <td>{{ $member->firstname }}</td>
                           <td>{{ $member->lastname }}</td>
                           <td>{{ $member->phone}}</td>
+                          <td>{{ $member->IndividualStatus}}</td>
                       </tr>
               @endforeach
               @else
