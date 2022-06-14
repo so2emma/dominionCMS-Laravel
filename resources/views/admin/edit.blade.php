@@ -193,8 +193,8 @@
                     <div class="col-12">
                         <label for="workerStatus" class="form-group">Are you a worker?</label> <br>
 
-                        <input type="radio" name="workerStatus" value="Worker" class="radio" <?php if (old('workerStatus', $member->membershipCompletion) == 'Worker') {echo 'checked="checked"';} ?>>Yes
-                        <input type="radio" name="workerStatus" value="Not a worker" class="radio"  <?php if(old('workerStatus', $member->membershipCompletion)== "Not a worker") { echo 'checked="checked"'; } ?>>No
+                        <input type="radio" name="workerStatus" value="Worker" class="radio" <?php if (old('workerStatus', $member->workerStatus) == 'Worker') {echo 'checked="checked"';} ?>>Yes
+                        <input type="radio" name="workerStatus" value="Not a worker" class="radio"  <?php if(old('workerStatus', $member->workerStatus)== "Not a worker") { echo 'checked="checked"'; } ?>>No
                         {{-- <input type="radio" name="workerStatus" value="Worker" /> Yes
                         <input type="radio" name="workerStatus" value="Not a worker" /> No --}}
 

@@ -11,19 +11,19 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                  @php
+                @php
                       $i = 1;
-                  @endphp
+                      @endphp
                   @foreach ($admins as $admin )
+                  <tr>
 
                   <th scope="row">{{ $i++ }}</th>
                   <td>{{ $admin->name }}</td>
                   <td>{{ $admin->email }}</td>
                   <td>{{ $admin->created_at }}</td>
 
+                </tr>
                   @endforeach
-              </tr>
             </tbody>
           </table>
 
